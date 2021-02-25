@@ -2,66 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta name="description" content="Webpage description goes here" />
-    <meta charset="utf-8">
-    <title>Grid Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h1>
-        Grid Page About Stuff
-    </h1>
-    <div class="grid">
-        <div class="item">
-            <p>
-                Hello
-            </p>
-        </div>
-        <div class="item">
-            <p>
-                Hello2
-            </p>
-        </div>
-        <div class="item">
-            <p>
-                Hello3
-            </p>
-        </div>
-        <div class="item">
-            <p>
-                Hello4
-            </p>
-        </div>
-        <div class="item">
-            <p>
-                Hello5
-            </p>
-        </div>
-        <div class="item">
-            <p>
-                Hello6
-            </p>
-        </div>
-        <div class="item">
-            <p>
-                Hello7
-            </p>
-        </div>
-        <div class="item">
-            <p>
-                Hello8
-            </p>
-        </div>
-        <div class="item">
-            <p>
-                Hello9
-            </p>
-        </div>
-    </div>
+    <ul id="app">
+        <input v-model="name" />
+        <button id="button" v-on:click="addToName(name)" class="btn btn-primary">Do</button>
+        <ol>
+            <li v-for="n in nameList">
+                {{n}}
+            </li>
+        </ol>
 
+        <table style="width:1000px; border-style: solid;" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{nameList[0]}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>{{nameList[1]}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>{{nameList[2]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ul>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
